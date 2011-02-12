@@ -1,5 +1,6 @@
 (function($) {
     $.fn.db = new Array();
+    $.fn.hearbeatTime = 2000;
     $.fn.log = function(msg) {
         if (console) {
             console.log(msg);
@@ -8,7 +9,7 @@
     $.fn.feedTheDB = function()
     {
         $.ajax({
-            url: ($.fn.feedTheDB.lastcall.refresh_url ? "https://search.twitter.com/search.json" + $().feedTheDB.lastcall.refresh_url: "https://search.twitter.com/search.json?q=%23nantes"),
+            url: ($.fn.feedTheDB.lastcall.refresh_url ? "https://search.twitter.com/search.json" + $().feedTheDB.lastcall.refresh_url: "https://search.twitter.com/search.json?rpp=50&q=%23nantes"),
             dataType: "jsonp",
             success: function(result) {
                 for (i in result.results) {
@@ -37,15 +38,15 @@
 
 
 $(function() {
+
+
     $().feedTheDB();
     (function($) {
         $.fn.paper = Raphael(0, 0, $().getViewport().width, $().getViewport().height);
     })(jQuery);
-
     //    testpouris();
     window.setInterval($().feedTheDB, 120000);
-    window.setInterval(hearbeat, 2000);
-
+    window.setInterval(hearbeat, $().hearbeatTime);
 });
 
 
@@ -56,48 +57,33 @@ function hearbeat() {
     $().sortDB();
 
     var mytw = $().db[0];
-    var t = $().paper.text(200, 200, mytw.text);
-    mytw.t = t;
+    mytw.t = $().paper.text(300, 300, mytw.text);
+    mytw.t.attr('text-anchor', 'start');
     mytw.played++;
 
-    var i = 1;
-
-    while (i < $().db.length) {
-        var ttw = $().db[i];
-        if (ttw.t || ttw.t != null) {
-            break;
-        }
-        i++;
-    }
-    $().log('first while break : ' + i);
-    while (i < $().db.length) {
-        var ttw = $().db[i];
-        if (ttw.t || ttw.t != null) {
-            if (ttw.t.attr('y') < 30) {
-                ttw.t.remove();
-                ttw.t = null;
-            } else {
-                ttw.t.animate({
-                    y: ttw.t.attr('y') - 30
-                },
-                500);
-            }
-        } else {
-            break;
-        }
-        i++;
-    }
-    $().log('second while break : ' + i);
-    $().log('------------------------');
-    var s = '';
-    for (y in $().db) {
-        s += (($().db[y].t || $().db[y].t != null) ? "X": "_");
-    }
-    $().log(s);
-    $().log('------------------------');
-
+    mytw.t.animate({
+        y: mytw.t.attr('y') - 50
+    },
+    300
+    );
+    window.setTimeout(oneAnimation.bind(mytw.t), $().hearbeatTime);
 
 }
+function oneAnimation() {
+    if (this.attr('y') < 50) {
+        this.remove();
+    } else {
+        var nowy = this.attr('y');
+        this.animate({
+            y: nowy - 50,
+            rotation: ((nowy / $().paper.height) * 20) - 20
+        },
+        300);
+        window.setTimeout(oneAnimation.bind(this), $().hearbeatTime);
+    }
+}
+
+
 
 function testpouris() {
     var c = $().paper.circle(50, 50, 40);
