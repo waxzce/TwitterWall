@@ -1,0 +1,23 @@
+img.tweetimg{
+	float:left;
+	margin:5px;
+	-moz-border-radius: 12px; /* FF1+ */
+	  -webkit-border-radius: 12px; /* Saf3-4 */
+	          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
+}
+div.tweet{
+	display:box;
+	margin:20px;
+	-moz-border-radius: 12px; /* FF1+ */
+	  -webkit-border-radius: 12px; /* Saf3-4 */
+	          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
+}
+a.twitter-anywhere-user{
+	float:left;
+}
+.tweet span.timefield{
+	float:right;
+}
+.ttext{
+	padding-top:20px;
+}
