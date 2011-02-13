@@ -152,9 +152,27 @@ function areWeUp() {
         success: function(result) {
             if (result == "1") {
                 hearbeat();
+                $('#soon').animate({
+                    opacity: 0
+                },
+                {
+                    duration: 1000,
+                    complete: function() {
+                        $(this).remove()
+                    }
+                });
+                var elemens = $('.reveal');
+                elemens.css('display', 'block');
+                elemens..animate({
+                    opacity: 1
+                },
+                {
+                    duration: 1000
+                });
+
                 window.setInterval(hearbeat, $().hearbeatTime);
             } else {
-                window.setTimeout(areWeUp, 10000);
+                window.setTimeout(areWeUp, 5000);
 
             }
         }

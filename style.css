@@ -45,3 +45,15 @@ a.hashtag{
 .ttext{
 	padding-top:20px;
 }
+#hashtag, #logo{
+	display:none;
+	position:absolute;
+	right:20px;
+	opacity:0;
+}
+#hashtag{
+	bottom:30px;
+}
+#logo{
+	top:30px;
+}
