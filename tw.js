@@ -163,7 +163,7 @@ function areWeUp() {
                 });
                 var elemens = $('.reveal');
                 elemens.css('display', 'block');
-                elemens..animate({
+                elemens.animate({
                     opacity: 1
                 },
                 {
