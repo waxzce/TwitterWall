@@ -150,7 +150,12 @@ function areWeUp() {
     $.ajax({
         url: 'howweare.status',
         success: function(result) {
-            $().log(result);
+            if (result == "1") {
+                window.setInterval(hearbeat, $().hearbeatTime);
+            } else {
+                window.setTimeout(areWeUp, 10000);
+
+            }
         }
     });
 }
@@ -163,7 +168,6 @@ $(function() {
 
     //    testpouris();
     window.setInterval($().feedTheDB, 120000);
-    window.setInterval(hearbeat, $().hearbeatTime);
 });
 
 
