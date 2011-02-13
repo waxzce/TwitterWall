@@ -45,6 +45,12 @@ a.hashtag{
 .ttext{
 	padding-top:20px;
 }
+#soon{
+	font-size:42;
+	position:absolute;
+	left:50%;
+	top:50%;
+}
 #hashtag, #logo{
 	display:none;
 	position:absolute;
