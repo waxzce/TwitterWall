@@ -150,7 +150,7 @@ function areWeUp() {
     $.ajax({
         url: 'howweare.status',
         success: function(result) {
-            $().log(result.responseText);
+            $().log(result);
         }
     });
 }
