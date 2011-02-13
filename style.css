@@ -1,3 +1,8 @@
+a{
+	text-decoration:none;
+	color:#000000;
+}
+
 img.tweetimg{
 	float:left;
 	margin:5px;
@@ -8,30 +13,34 @@ img.tweetimg{
 	          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
 }
 div.tweet{
+	background-color:#eeffee;
 	display:box;
 	margin:20px;
 	height:60px;
-	padding:5px;
-	width:500px;
+	width:550px;
+	overflow:hidden;
 	position:absolute;
+	padding:5px;
+	border:2px #555555 solid;
 	-moz-border-radius: 12px; /* FF1+ */
 	  -webkit-border-radius: 12px; /* Saf3-4 */
 	          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
-			 -moz-box-shadow: 0px 0px 4px #000; /* FF3.5+ */
-			  -webkit-box-shadow: 0px 0px 4px #000; /* Saf3.0+, Chrome */
-			          box-shadow: 0px 0px 4px #000; 
-			
-					     -moz-transform: rotate(-7.5deg);  
-					  -webkit-transform: rotate(-7.5deg);  
-					          transform: rotate(-7.5deg);  
 					             
 
 }
 a.twitter-anywhere-user{
 	float:left;
+	font-weight:bold;
+}
+div.tweet a{
+	color:#ddaaaa;
+}
+a.hashtag{
+	color:#ffaaaa;
 }
 .tweet span.timefield{
 	float:right;
+	font-style:italic;
 }
 .ttext{
 	padding-top:20px;

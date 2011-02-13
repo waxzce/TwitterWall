@@ -3,7 +3,8 @@
     $.fn.db = new Array();
     $.fn.hearbeatTime = 3000;
     $.fn.angle = 9;
-
+	$.fn.twrequest = 'rpp=50&q=%23nantes';
+	$.fn.hashtag = '#nantes';
     $.fn.log = function(msg) {
         if (console) {
             console.log(msg);
@@ -12,7 +13,7 @@
     $.fn.feedTheDB = function()
     {
         $.ajax({
-            url: ($.fn.feedTheDB.lastcall.refresh_url ? "https://search.twitter.com/search.json" + $().feedTheDB.lastcall.refresh_url: "https://search.twitter.com/search.json?rpp=50&q=%23nantes"),
+            url: ($.fn.feedTheDB.lastcall.refresh_url ? "https://search.twitter.com/search.json" + $().feedTheDB.lastcall.refresh_url: "https://search.twitter.com/search.json?"+$().twrequest),
             dataType: "jsonp",
             success: function(result) {
                 for (i in result.results) {
@@ -65,7 +66,7 @@ function hearbeat() {
     $().sortDB();
 
 
-    jQuery('body').append('<div class="rounded tweet"></div>');
+    jQuery('body').append('<div class="tweet"></div>');
     var domelem = jQuery('div.tweet:last');
     var elem = $().db[0];
     domelem.append('<img class="tweetimg" src="' + elem.profile_image_url + '">');
@@ -78,8 +79,8 @@ function hearbeat() {
     domelem.css('top', '-200px');
     domelem.css('left', '500px');
     domelem.animate({
-        left: $().getViewport().with / 2,
-        top: $().getViewport().height / 2,
+        left: $().getViewport().width - 600,
+        top: $().getViewport().height / 2
     },
     {
         duration: $().hearbeatTime * 0.25,
@@ -95,7 +96,8 @@ function hearbeat() {
         },
         complete: function() {
             $this.animate({
-                top: '+=40'
+                top: '+=40',
+backgroundColor:'#eeeeee'
             },
             {
                 specialEasing: {
