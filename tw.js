@@ -151,6 +151,7 @@ function areWeUp() {
         url: 'howweare.status',
         success: function(result) {
             if (result == "1") {
+                hearbeat();
                 window.setInterval(hearbeat, $().hearbeatTime);
             } else {
                 window.setTimeout(areWeUp, 10000);
