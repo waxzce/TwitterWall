@@ -1,10 +1,10 @@
 // my script now
- (function($) {
+(function($) {
     $.fn.db = new Array();
     $.fn.hearbeatTime = 3000;
     $.fn.angle = 9;
-	$.fn.twrequest = 'rpp=50&q=%23nantes';
-	$.fn.hashtag = '#nantes';
+    $.fn.twrequest = 'rpp=50&q=%23nantes';
+    $.fn.hashtag = '#nantes';
     $.fn.log = function(msg) {
         if (console) {
             console.log(msg);
@@ -13,7 +13,7 @@
     $.fn.feedTheDB = function()
     {
         $.ajax({
-            url: ($.fn.feedTheDB.lastcall.refresh_url ? "https://search.twitter.com/search.json" + $().feedTheDB.lastcall.refresh_url: "https://search.twitter.com/search.json?"+$().twrequest),
+            url: ($.fn.feedTheDB.lastcall.refresh_url ? "https://search.twitter.com/search.json" + $().feedTheDB.lastcall.refresh_url: "https://search.twitter.com/search.json?" + $().twrequest),
             dataType: "jsonp",
             success: function(result) {
                 for (i in result.results) {
@@ -46,17 +46,6 @@
     }
 
 })(jQuery);
-
-
-$(function() {
-
-
-    $().feedTheDB();
-
-    //    testpouris();
-    window.setInterval($().feedTheDB, 120000);
-    window.setInterval(hearbeat, $().hearbeatTime);
-});
 
 
 function hearbeat() {
@@ -97,7 +86,7 @@ function hearbeat() {
         complete: function() {
             $this.animate({
                 top: '+=40',
-backgroundColor:'#eeeeee'
+                backgroundColor: '#eeeeee'
             },
             {
                 specialEasing: {
@@ -156,5 +145,25 @@ function followupannimation() {
     });
     window.setTimeout(followupannimation2.bind($this), $().hearbeatTime);
 }
+
+function areWeUp() {
+    $.ajax({
+        url: 'howweare.status',
+        success: function(result) {
+            $().log(result.responseText);
+        }
+    });
+}
+
+$(function() {
+
+
+    $().feedTheDB();
+    areWeUp();
+
+    //    testpouris();
+    window.setInterval($().feedTheDB, 120000);
+    window.setInterval(hearbeat, $().hearbeatTime);
+});
 
 
