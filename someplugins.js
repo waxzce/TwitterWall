@@ -359,7 +359,7 @@ jQuery.extend(jQuery.easing,
 String.prototype.linkify = function() {
     return this.replace(/(https?:\/\/\S+)/gi,
     function(m) {
-        return '<a target="_blank" href="' + m + '">' + m + "</a>";
+        return '<a target="_blank" href="' + m + '" class="somelink">' + m + "</a>";
     });
 };
 String.prototype.tagify = function() {

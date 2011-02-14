@@ -32,7 +32,7 @@ a.twitter-anywhere-user{
 	float:left;
 	font-weight:bold;
 }
-div.tweet a{
+div.tweet a.somelink{
 	color:#ddaaaa;
 }
 a.hashtag{
