@@ -3,6 +3,10 @@ a{
 	color:#000000;
 }
 
+*{
+	font-family:sans-serif;
+}
+
 img.tweetimg{
 	float:left;
 	margin:5px;
@@ -13,7 +17,7 @@ img.tweetimg{
 	          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
 }
 div.tweet{
-	background-color:#F4C3BA; /* 686868 */
+	background-color:#cccccc; /* 686868 */
 	display:box;
 	margin:20px;
 	height:60px;
@@ -21,7 +25,7 @@ div.tweet{
 	overflow:hidden;
 	position:absolute;
 	padding:5px;
-	border:2px #F93E0D solid;
+	border:5px #F93E0D solid;
 	-moz-border-radius: 12px; /* FF1+ */
 	  -webkit-border-radius: 12px; /* Saf3-4 */
 	          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
@@ -59,7 +63,7 @@ a.hashtag{
 }
 #hashtag{
 	bottom:30px;
-	font-size:120px;
+	font-size:90px;
 }
 #logo{
 	top:30px;
