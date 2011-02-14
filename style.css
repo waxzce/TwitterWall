@@ -17,7 +17,7 @@ img.tweetimg{
 	          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
 }
 div.tweet{
-	background-color:#dddddd; /* 686868 */
+	background-color:#ffffff; /* 686868 */
 	display:box;
 	margin:20px;
 	height:60px;
@@ -37,10 +37,10 @@ a.twitter-anywhere-user{
 	font-weight:bold;
 }
 div.tweet a.somelink{
-	color:#ddaaaa;
+	color:#686868;
 }
-a.hashtag{
-	color:#ffaaaa;
+a.hashtag, a.twittername{
+	color:#F93E0D;
 }
 .tweet span.timefield{
 	float:right;
