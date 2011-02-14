@@ -366,7 +366,10 @@ String.prototype.tagify = function() {
     return this.replace(/(^|\s)#(\w+)/g,
     function(m) {
         return '<a class="hashtag" target="_blank" href="http://search.twitter.com/search?q=' + m.replace('#', '%23') + '">' + m + "</a>";
-    });
+    }).replace(/(^|\s)@(\w+)/g,
+	    function(m) {
+	        return '<a class="twittername" target="_blank" href="http://twitter.com/'+ m + '">' + m + "</a>";
+	    });
 };
 
 jQuery.timeField.init({
