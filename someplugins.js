@@ -392,7 +392,7 @@ jQuery.timeField.init({
 (function(jQuery){
 
     // We override the animation for all of these color styles
-    jQuery.each(['backgroundColor', 'borderBottomColor', 'borderLeftColor', 'borderRightColor', 'borderTopColor', 'color', 'outlineColor'], function(i,attr){
+    jQuery.each(['backgroundColor','borderColor', 'borderBottomColor', 'borderLeftColor', 'borderRightColor', 'borderTopColor', 'color', 'outlineColor'], function(i,attr){
         jQuery.fx.step[attr] = function(fx){
             if ( !fx.colorInit ) {
                 fx.start = getColor( fx.elem, attr );

@@ -86,7 +86,6 @@ function hearbeat() {
         complete: function() {
             $this.animate({
                 top: '+=40',
-				borderColor:'#686868',
                 backgroundColor: '#eeeeee'
             },
             {
@@ -121,6 +120,7 @@ function followupannimation() {
 
     $this.animate({
         left: 20,
+			borderColor:'#686868',
         top: $().getViewport().height - 120
     },
     {
