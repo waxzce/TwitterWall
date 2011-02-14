@@ -86,6 +86,7 @@ function hearbeat() {
         complete: function() {
             $this.animate({
                 top: '+=40',
+				borderColor:'#686868',
                 backgroundColor: '#eeeeee'
             },
             {
