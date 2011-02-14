@@ -35,6 +35,7 @@ div.tweet{
 a.twitter-anywhere-user{
 	float:left;
 	font-weight:bold;
+	color:#F93E0D;
 }
 div.tweet a.somelink{
 	color:#686868;
@@ -45,6 +46,7 @@ a.hashtag, a.twittername{
 .tweet span.timefield{
 	float:right;
 	font-style:italic;
+	color:#686868;
 }
 .ttext{
 	padding-top:20px;
