@@ -85,7 +85,7 @@ function hearbeat() {
         },
         complete: function() {
             $this.animate({
-                top: '+=40',
+                top: '+=40'
             },
             {
                 specialEasing: {
