@@ -107,7 +107,7 @@ function followupannimation2() {
         this.remove();
     } else {
         this.animate({
-            left: (this.css('left') == 5 ? 15 : 5),
+            left: (parseFloat(this.css('left')) == 5 ? 15 : 5),
             top: parseFloat(this.css('top')) - 100
         },
         $().hearbeatTime * 0.25);
