@@ -176,7 +176,7 @@ function areWeUp() {
                 hearbeat();
                 window.setInterval(hearbeat, $().hearbeatTime);
             } else {
-                window.setTimeout(areWeUp, 5000);
+                window.setTimeout(areWeUp, 2000);
 
             }
         }
