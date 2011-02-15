@@ -69,6 +69,10 @@ a.hashtag, a.twittername{
 	height:500px;
 	padding-top:100px;
 }
+#soon span{
+	
+	margin-left:200px;
+}
 #hashtag, #logo{
 	display:none;
 	position:absolute;
