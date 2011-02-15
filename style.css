@@ -65,7 +65,7 @@ a.hashtag, a.twittername{
 	color:#686868;
 	top:20%;
 	background-image:url('wait.png');
-	background-repeat:none;
+	background-repeat:no-repeat;
 	height:500px;
 	padding-top:100px;
 }
