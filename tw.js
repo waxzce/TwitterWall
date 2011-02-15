@@ -40,8 +40,8 @@
     };
     $.fn.sortDB = function() {
         $.fn.db.sort($.fn.feedTheDB.sortfunction);
-        if ($.fn.db.length > 100) {
-            $.fn.db = $.fn.db.slice(0, 100);
+        if ($.fn.db.length > 200) {
+            $.fn.db = $.fn.db.slice(0, 200);
         }
     }
 
