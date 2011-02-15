@@ -6,6 +6,9 @@ a{
 *{
 	font-family:sans-serif;
 }
+body{
+	overflow:hidden;
+}
 
 img.tweetimg{
 	float:left;
