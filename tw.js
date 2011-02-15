@@ -68,7 +68,7 @@ function hearbeat() {
     domelem.css('top', '-200px');
     domelem.css('left', '500px');
     domelem.animate({
-        left: $().getViewport().width - 660,
+        left: $().getViewport().width - 680,
         top: $().getViewport().height / 2
     },
     {
