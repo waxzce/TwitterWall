@@ -66,7 +66,7 @@ function hearbeat() {
     elem.played++;
 
     domelem.css('top', '-200px');
-    domelem.css('left', $().getViewport().width-200);
+    domelem.css('left', $().getViewport().width - 400);
     domelem.animate({
         left: $().getViewport().width - 680,
         top: $().getViewport().height / 2
@@ -119,11 +119,11 @@ function followupannimation() {
 
     $this.animate({
         left: 10,
-			borderBottomColor:'#ffffff',
-			borderTopColor:'#ffffff',
-			borderRightColor:'#ffffff',
-			borderLeftColor:'#ffffff',
-			backgroundColor: '#eeeeee',
+        borderBottomColor: '#ffffff',
+        borderTopColor: '#ffffff',
+        borderRightColor: '#ffffff',
+        borderLeftColor: '#ffffff',
+        backgroundColor: '#eeeeee',
         top: $().getViewport().height - 120
     },
     {
@@ -173,7 +173,7 @@ function areWeUp() {
                 {
                     duration: 1000
                 });
-
+                $().hearbeatTime();
                 window.setInterval(hearbeat, $().hearbeatTime);
             } else {
                 window.setTimeout(areWeUp, 5000);
