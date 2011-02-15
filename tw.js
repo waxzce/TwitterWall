@@ -107,7 +107,7 @@ function followupannimation2() {
         this.remove();
     } else {
         this.animate({
-            left: (parseFloat(this.css('left')) == 5 ? 15 : 5),
+            left: (parseFloat(this.css('left')) == 0 ? 20 : 0),
             top: parseFloat(this.css('top')) - 100
         },
         $().hearbeatTime * 0.25);
@@ -118,7 +118,7 @@ function followupannimation() {
     $this = $(this);
 
     $this.animate({
-        left: 5,
+        left: 0,
 			borderColor:'#9E4334',
 			backgroundColor: '#eeeeee',
         top: $().getViewport().height - 120
