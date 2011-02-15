@@ -1,7 +1,7 @@
 // my script now
 (function($) {
     $.fn.db = new Array();
-    $.fn.hearbeatTime = 3000;
+    $.fn.hearbeatTime = 5000;
     $.fn.angle = 9;
     $.fn.twrequest = 'rpp=50&q=%23nantes';
     $.fn.hashtag = '#nantes';
