@@ -3,7 +3,7 @@
     $.fn.db = new Array();
     $.fn.hearbeatTime = 5000;
     $.fn.angle = 9;
-    $.fn.twrequest = 'rpp=50&q=%23nantes';
+    $.fn.twrequest = 'rpp=80&q=from%3Aouestnumerique+OR+%23ouestnumeric+OR+%23ouestnumerique';
     $.fn.hashtag = '#nantes';
     $.fn.log = function(msg) {
         if (console) {
