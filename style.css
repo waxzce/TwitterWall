@@ -61,8 +61,9 @@ a.hashtag, a.twittername{
 #soon{
 	font-size:52px;
 	position:absolute;
-	left:50%;
-	top:50%;
+	left:20%;
+	color:#686868;
+	top:20%;
 }
 #hashtag, #logo{
 	display:none;
