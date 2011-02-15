@@ -107,7 +107,7 @@ function followupannimation2() {
         this.remove();
     } else {
         this.animate({
-            left: (parseFloat(this.css('left')) == 0 ? 20 : 0),
+            left: 10,
             top: parseFloat(this.css('top')) - 100
         },
         $().hearbeatTime * 0.25);
@@ -118,7 +118,7 @@ function followupannimation() {
     $this = $(this);
 
     $this.animate({
-        left: 0,
+        left: 10,
 			borderBottomColor:'#ffffff',
 			borderTopColor:'#ffffff',
 			borderRightColor:'#ffffff',
