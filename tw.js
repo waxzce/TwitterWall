@@ -120,6 +120,9 @@ function followupannimation() {
     $this.animate({
         left: 0,
 			borderBottomColor:'#ffffff',
+			borderTopColor:'#ffffff',
+			borderRightColor:'#ffffff',
+			borderLeftColor:'#ffffff',
 			backgroundColor: '#eeeeee',
         top: $().getViewport().height - 120
     },
