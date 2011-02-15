@@ -64,6 +64,7 @@ a.hashtag, a.twittername{
 	left:20%;
 	color:#686868;
 	top:20%;
+	background-image:url('wait.png');
 }
 #hashtag, #logo{
 	display:none;
