@@ -41,14 +41,8 @@ div.tweet{
 a.twitter-anywhere-user{
 	float:left;
 	font-weight:bold;
-	color:#F93E0D;
 }
-div.tweet a.somelink{
-	color:#686868;
-}
-a.hashtag, a.twittername{
-	color:#F93E0D;
-}
+
 .tweet span.timefield{
 	float:right;
 	font-style:italic;
@@ -58,26 +52,11 @@ a.hashtag, a.twittername{
 .ttext{
 	padding-top:25px;
 }
-#soon{
-	font-size:52px;
-	position:absolute;
-	left:20%;
-	color:#686868;
-	top:20%;
-	background-image:url('wait.png');
-	background-repeat:no-repeat;
-	height:500px;
-	padding-top:100px;
-}
-#soon span{
-	
-	margin-left:350px;
-}
+
 #hashtag, #logo{
-	display:none;
+	display:block;
 	position:absolute;
 	right:20px;
-	opacity:0;
 }
 #hashtag{
 	bottom:30px;

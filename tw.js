@@ -1,10 +1,57 @@
+$.extend({
+    URLEncode: function(c) {
+        var o = '';
+        var x = 0;
+        c = c.toString();
+        var r = /(^[a-zA-Z0-9_.]*)/;
+        while (x < c.length) {
+            var m = r.exec(c.substr(x));
+            if (m != null && m.length > 1 && m[1] != '') {
+                o += m[1];
+                x += m[1].length;
+            } else {
+                if (c[x] == ' ') o += '+';
+                else {
+                    var d = c.charCodeAt(x);
+                    var h = d.toString(16);
+                    o += '%' + (h.length < 2 ? '0': '') + h.toUpperCase();
+                }
+                x++;
+            }
+        }
+        return o;
+    },
+    URLDecode: function(s) {
+        var o = s;
+        var binVal,
+        t;
+        var r = /(%[^%]{2})/;
+        while ((m = r.exec(o)) != null && m.length > 1 && m[1] != '') {
+            b = parseInt(m[1].substr(1), 16);
+            t = String.fromCharCode(b);
+            o = o.replace(m[1], t);
+        }
+        return o;
+    }
+});
+
+
+
+
+
+
 // my script now
-(function($) {
+ (function($) {
     $.fn.db = new Array();
     $.fn.hearbeatTime = 5000;
     $.fn.angle = 9;
-    $.fn.twrequest = 'rpp=80&q=from%3Aouestnumerique+OR+%23ouestnumeric+OR+%23ouestnumerique';
-    $.fn.hashtag = '#nantes';
+    $.fn.twrequest = 'rpp=80&q=' + $.URLEncode($.query.get('twrequest'));
+    $.fn.hashtag = $.query.get('hashtag');
+    $.fn.img = $.query.get('img');
+    $.fn.colorpseudo = '#'+$.query.get('colorpseudo');
+    $.fn.colorlink = '#'+$.query.get('colorlink');
+    $.fn.colorborder = '#'+$.query.get('colorborder');
+
     $.fn.log = function(msg) {
         if (console) {
             console.log(msg);
@@ -67,6 +114,9 @@ function hearbeat() {
 
     domelem.css('top', '-200px');
     domelem.css('left', $().getViewport().width - 400);
+    domelem.find('a.hashtag, a.twittername,a.twitter-anywhere-user').css('color', $().colorpseudo);
+    domelem.find('a.somelink').css('color', $().colorlink);
+    domelem.css('border-color', $().colorborder);
     domelem.animate({
         left: $().getViewport().width - 680,
         top: $().getViewport().height / 2
@@ -173,8 +223,7 @@ function areWeUp() {
                 {
                     duration: 1000
                 });
-                hearbeat();
-                window.setInterval(hearbeat, $().hearbeatTime);
+
             } else {
                 window.setTimeout(areWeUp, 2000);
 
@@ -187,10 +236,14 @@ $(function() {
 
 
     $().feedTheDB();
-    areWeUp();
 
     //    testpouris();
-    window.setInterval($().feedTheDB, 120000);
+    window.setInterval($().feedTheDB, 100000);
+    hearbeat();
+    window.setInterval(hearbeat, $().hearbeatTime);
+    $('#hashtag').text($().hashtag);
+    $('#logo img').attr('src', $().img);
+
 });
 
 
