@@ -66,3 +66,18 @@ a.twitter-anywhere-user{
 #logo{
 	top:30px;
 }
+#setupform{
+	position:absolute;
+	top:50px;
+	left:80px;
+	width:500px;
+	background-color:#eeeeee;
+	padding:10px;
+}
+#setupform input{
+	float:right;
+}
+#setupform span{
+	display:block;
+	margin-bottom:30px;
+}

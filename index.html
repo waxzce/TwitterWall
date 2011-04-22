@@ -5,6 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="jquery-1.5.min.js"></script>
 		<script type="text/javascript" src="jquery.query.js"></script>
+		<link rel="stylesheet" media="screen" type="text/css" href="css/colorpicker.css" />
+		<script type="text/javascript" src="js/colorpicker.js"></script>
 		<script type="text/javascript" src="viewport.js"></script>
 		<script type="text/javascript" src="someplugins.js"></script>
 		
@@ -19,7 +21,41 @@
 
 <div id="logo" class="reveal"><img src="loader.gif" /></div>
 
-<div id="hashtag" class="reveal">#OuestNumerique</div>
+<div id="setupform">
+	<form method="GET">
+		<h2>Setup form</h2>
+		<span>
+		<label for="twrequest">The twitter request you want to make</label>
+		<input type="text" name="twrequest" value="#javascript OR #js" />
+		</span>
+		<span>
+		<label for="hashtag">The #hastag you want display</label>
+		<input type="text" name="hashtag" value="#javascript" />
+		</span>
+		<span>
+		<label for="img">The picture url</label>
+		<input type="text" name="img" value="http://i.imgur.com/UjRpT.jpg" />
+		</span>
+		<span>
+		<label for="colorborder">The color of the borders</label>
+		<input class="colorpick" type="text" name="colorborder" value="4477bb" />
+		</span>
+		<span>
+		<label for="colorlink">The color of the links</label>
+		<input class="colorpick" type="text" name="colorlink" value="225599" />
+		</span>
+		<span>
+		<label for="colorpseudo">The color of the pseudos and hastags</label>
+		<input class="colorpick" type="text" name="colorpseudo" value="DD5555" />
+		</span>
+		<span>
+		<input type="submit" />
+		</span>
+	</form>
+	<div>made by <a href="http://twitter.com/waxzce">@waxzce</a></div>
+</div>
+
+<div id="hashtag" class="reveal">Twitter wall by <a href="http://twitter.com/waxzce">@waxzce</a></div>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
