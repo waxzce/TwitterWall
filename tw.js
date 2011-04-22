@@ -248,13 +248,11 @@ if($.query.get('twrequest') != ''){
     $('#logo img').attr('src', $().img);
 }else{
 	$('#logo img').remove();
-	$('#logo').html('<script type="text/javascript"><!--
+	$('#logo').html('<script type="text/javascript">
 	google_ad_client = "ca-pub-8359775803550243";
-	/* annonce twitter wall */
 	google_ad_slot = "5047534204";
 	google_ad_width = 250;
 	google_ad_height = 250;
-	//-->
 	</script>
 	<script type="text/javascript"
 	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
