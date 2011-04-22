@@ -73,6 +73,8 @@ a.twitter-anywhere-user{
 	width:500px;
 	background-color:#eeeeee;
 	padding:10px;
+	padding-bottom:50px;
+	margin-bottom:40px;
 }
 #setupform input{
 	float:right;
