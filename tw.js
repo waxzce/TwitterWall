@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     $.fn.db = new Array();
     $.fn.hearbeatTime = 5000;
     $.fn.angle = 9;
-    $.fn.twrequest = 'rpp=80&q=' + $.URLEncode($.query.get('twrequest'));
+    $.fn.twrequest = 'rpp=90&q=' + $.URLEncode($.query.get('twrequest'));
     $.fn.hashtag = $.query.get('hashtag');
     $.fn.img = $.query.get('img');
     $.fn.colorpseudo = '#'+$.query.get('colorpseudo');
@@ -60,8 +60,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     };
     $.fn.sortDB = function() {
         $.fn.db.sort($.fn.feedTheDB.sortfunction);
-        if ($.fn.db.length > 200) {
-            $.fn.db = $.fn.db.slice(0, 200);
+        if ($.fn.db.length > 400) {
+            $.fn.db = $.fn.db.slice(0, 400);
         }
     }
 
@@ -91,7 +91,7 @@ function hearbeat() {
     domelem.find('a.somelink').css('color', $().colorlink);
     domelem.css('border-color', $().colorborder);
     domelem.animate({
-        left: $().getViewport().width - 680,
+        left: $().getViewport().width - 700,
         top: $().getViewport().height / 2
     },
     {
