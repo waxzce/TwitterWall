@@ -219,6 +219,9 @@ if($.query.get('twrequest') != ''){
     window.setInterval(hearbeat, $().hearbeatTime);
     $('#hashtag').text($().hashtag);
     $('#logo img').attr('src', $().img);
+	if($().imgsmooth){
+		$('#logo').css({'right':'0px','top':'0px'});
+	}
 }else{
 	$('#logo img').remove();
 	$('input.colorpick').ColorPicker({
